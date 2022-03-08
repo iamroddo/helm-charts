@@ -21,6 +21,8 @@ annotations:
       url: https://raw.githubusercontent.com/nautobot/nautobot/develop/nautobot/docs/media/screenshot3.png
   artifacthub.io/changes: |
     - kind: changed
+      description: {{{prTitle}}}
+    - kind: changed
       description: Nautobot Version 1.2.8
     - kind: changed
       description: Upgraded Bitnami common subchart from 1.11.1 to 1.11.3
@@ -31,7 +33,7 @@ annotations:
     - kind: changed
       description: Upgraded Redis subchart from 16.4.0 to 16.5.0
 apiVersion: "v2"
-appVersion: "1.2.8"
+appVersion: "1.2.8-py3.9"
 dependencies:
   - condition: "redis.enabled"
     name: "redis"
@@ -40,7 +42,7 @@ dependencies:
   - condition: "postgresql.enabled"
     name: "postgresql"
     repository: "https://charts.bitnami.com/bitnami"
-    version: "10.x.x"
+    version: "11.x"
   - condition: "postgresqlha.enabled"
     name: "postgresql-ha"
     repository: "https://charts.bitnami.com/bitnami"
