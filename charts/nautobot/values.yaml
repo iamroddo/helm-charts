@@ -936,10 +936,12 @@ postgresql:
   # -- [ref](https://github.com/bitnami/charts/tree/master/bitnami/postgresql#postgresql-parameters) PostgreSQL user password
   postgresqlPassword: ""
   securityContext:
+    enabled: true
     seccompProfile:
       type: "RuntimeDefault"
   containerSecurityContext:
     allowPrivilegeEscalation: false
+    enabled: true
     readOnlyRootFilesystem: false  # Must be set to false
     capabilities:
       drop:
@@ -960,21 +962,25 @@ redis:
   master:
     containerSecurityContext:
       allowPrivilegeEscalation: false
+      enabled: true
       readOnlyRootFilesystem: true
       capabilities:
         drop:
           - "ALL"
     podSecurityContext:
+      enabled: true
       seccompProfile:
         type: "RuntimeDefault"
   replica:
     containerSecurityContext:
       allowPrivilegeEscalation: false
+      enabled: true
       readOnlyRootFilesystem: true
       capabilities:
         drop:
           - "ALL"
     podSecurityContext:
+      enabled: true
       seccompProfile:
         type: "RuntimeDefault"
   sentinel:
